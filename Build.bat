@@ -1,7 +1,4 @@
-:: вот кому надо кто хочет сделать
 @echo off
 if exist dist rmdir /s /q dist
-python -m PyInstaller --clean --noconsole --onefile --uac-admin --icon="icon.ico" --add-data "rick.avi;." prank.py
-if exist build rmdir /s /q build
-if exist prank.spec del /f /q prank.spec
+python -m nuitka --msvc=latest  --standalone --onefile --plugin-enable=tk-inter --windows-console-mode=disable --windows-uac-admin --windows-icon-from-ico="icon.ico" --include-data-files="rick.avi=rick.avi" --output-filename="Steam_Online_Fix.exe" --output-dir=dist prank.py
 pause

@@ -5,8 +5,8 @@ import sys
 import ctypes
 import keyboard
 
-def get_base_path():
-    return os.path.dirname(os.path.abspath(__file__))
+def resource_path(relative_path):
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), relative_path)
 
 VIDEO_PATH = resource_path("rick.avi")
 VIDEO_DURATION_MS = 213000
